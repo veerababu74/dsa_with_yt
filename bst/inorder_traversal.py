@@ -4,11 +4,12 @@ class BST:
         self.lchild=None
         self.rchild=None
 
+
     def insert(self,data):
         if self.key is None:
             self.key=data
             return
-        if self.key == data:
+        if self.key==data:
             return
         if self.key>data:
             if self.lchild:
@@ -20,10 +21,10 @@ class BST:
                 self.rchild.insert(data)
             else:
                 self.rchild=BST(data)
-
+    
     def serch(self,data):
         if self.key is None:
-            print("bst is data")
+            print("bst is empty")
             return
         if self.key==data:
             print("node is found")
@@ -32,23 +33,44 @@ class BST:
             if self.lchild:
                 self.lchild.serch(data)
             else:
-                print("node is not found")
+                print("node not prasent in l chiled")
         else:
             if self.rchild:
                 self.rchild.serch(data)
             else:
-                print("node is not found")
+                print("node not prasent in r child")
 
-                
     def preorder(self):
         if self.key is None:
-            print("bst is empty")
+            print("bst is empt")
             return
         print(self.key,"-->",end="")
         if self.lchild:
             self.lchild.preorder()
         if self.rchild:
             self.rchild.preorder()
+
+    def inorder(self):
+        if self.key is None:
+            print("bst is empt")
+            return
+        if self.lchild:
+            self.lchild.inorder()
+        print(self.key,"-->",end="")
+        if self.rchild:
+            self.rchild.inorder()
+
+
+    def postorder(self):
+        if self.key is None:
+            print("bst is empty")
+            return
+        if self.lchild:
+            self.lchild.postorder()
+        if self.rchild:
+            self.rchild.postorder()
+        print(self.key,"-->",end="")
+
 
 root=BST(None)
 
@@ -58,4 +80,7 @@ for i in list1:
 root.serch(77)
 print("below is pre order traversal")
 root.preorder()
-       
+print("\nbelow is in order traversal")
+root.inorder()
+print("\nbelow is post order traversal")
+root.postorder()
