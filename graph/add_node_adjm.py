@@ -48,22 +48,14 @@ def add_edge_unorder_with_weight(v1,v2,cost):
         index1=nodes.index(v1)
         index2=nodes.index(v2)
         graph[index1][index2]=cost
-        graph[index2][index1]=cost
+        graph[index2][index1]=cost #remove this to its become orderd graph with edge
 
 
 def print_graph():
     for i in range(count):
         for j in range(count):
-            print(graph[i][j],"",end=" ")
+            print(format(graph[i][j],">3"),end="")
         print()
-
-
-
-
-
-
-
-
 
 
 nodes=[]
@@ -71,10 +63,9 @@ graph=[]
 count=0
 
 add_node("A")
-add_node("B")
-add_node("D")
-add_node("C")
-add_edge_unorder_with_weight("A","B",100)
+add_node("c")
+add_node("s")
+
 
 
 print_graph()
