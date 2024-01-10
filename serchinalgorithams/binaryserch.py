@@ -3,7 +3,6 @@ def binaryserch(arr,key):
     found=False
     low=0
     high=len(arr)-1
-    mid=(low+high)//2
     while low <= high and not found:
         mid=(low+high)//2
         if key == mid:
